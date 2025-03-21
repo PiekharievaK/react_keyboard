@@ -15,12 +15,12 @@ export class App extends React.Component<State> {
 
   componentDidMount = () => {
     document.addEventListener('keyup', this.keyUp);
-
-    return () => {
-      document.removeEventListener('keyup', this.keyUp);
-      this.setState({ pressedKey: null });
-    };
   };
+
+  componentWillUnmount(): void {
+    document.removeEventListener('keyup', this.keyUp);
+    this.setState({ pressedKey: null });
+  }
 
   render() {
     return (
