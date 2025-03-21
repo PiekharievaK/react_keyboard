@@ -17,10 +17,10 @@ export class App extends React.Component<State> {
     document.addEventListener('keyup', this.keyUp);
   };
 
-  componentWillUnmount(): void {
+  componentWillUnmount = (): void => {
     document.removeEventListener('keyup', this.keyUp);
     this.setState({ pressedKey: null });
-  }
+  };
 
   render() {
     return (
