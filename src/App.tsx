@@ -18,6 +18,7 @@ export class App extends React.Component<State> {
 
     return () => {
       document.removeEventListener('keyup', this.keyUp);
+      this.setState({ pressedKey: null });
     };
   };
 
